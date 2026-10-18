@@ -1,0 +1,13 @@
+{
+  "name": "col-video-sim-framework",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "watch": "tsc -w -p tsconfig.json"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  }
+}

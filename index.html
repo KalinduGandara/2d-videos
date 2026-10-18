@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Satisfying Physics Sim Framework</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #0f0f13;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      color: #d8d8e6;
+    }
+
+    #overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at center, rgba(40, 40, 56, 0.28), rgba(0, 0, 0, 0.6));
+      transition: opacity 300ms ease;
+    }
+
+    .overlay-panel {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      padding: 18px 20px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(8, 8, 12, 0.76);
+      box-shadow: 0 0 26px rgba(77, 208, 225, 0.22);
+      user-select: none;
+      min-width: 280px;
+    }
+
+    #videoSelect {
+      width: 100%;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      background: #101018;
+      color: #e7ecff;
+      padding: 8px 10px;
+      font-size: 13px;
+    }
+
+    #startBtn {
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      border-radius: 999px;
+      padding: 10px 16px;
+      background: #151520;
+      color: #e6f7ff;
+      font-size: 14px;
+      cursor: pointer;
+      letter-spacing: 0.3px;
+      transition: transform 120ms ease, box-shadow 120ms ease;
+      box-shadow: 0 0 12px rgba(241, 91, 255, 0.35);
+    }
+
+    #startBtn:hover {
+      transform: translateY(-1px) scale(1.01);
+      box-shadow: 0 0 18px rgba(0, 245, 255, 0.5);
+    }
+
+    #startBtn:active {
+      transform: translateY(0) scale(0.995);
+    }
+
+    #overlayText {
+      font-size: 12px;
+      color: #cfd3e6;
+      letter-spacing: 0.2px;
+    }
+  </style>
+</head>
+<body>
+  <div id="overlay">
+    <div class="overlay-panel">
+      <select id="videoSelect" aria-label="Video preset"></select>
+      <button id="startBtn" type="button">★ Start Simulation</button>
+      <div id="overlayText">Starts physics + resumes audio</div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.20.0/matter.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/15.1.22/Tone.min.js"></script>
+  <script type="module" src="dist/main.js"></script>
+</body>
+</html>
